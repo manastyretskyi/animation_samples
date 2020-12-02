@@ -33,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final controller = PageController(initialPage: 5);
+  final controller = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
