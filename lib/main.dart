@@ -1,7 +1,9 @@
+import 'package:animation_samples/eighth_page.dart';
 import 'package:animation_samples/fifth_page.dart';
 import 'package:animation_samples/first_page.dart';
 import 'package:animation_samples/fourth_page.dart';
 import 'package:animation_samples/second_page.dart';
+import 'package:animation_samples/seventh_page.dart';
 import 'package:animation_samples/sixth_page.dart';
 import 'package:animation_samples/third_page.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +35,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final controller = PageController(initialPage: 0);
+  final controller = PageController(initialPage: 6);
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
           FourthPage(),
           FifthPage(),
           SixthPage(),
+          SeventhPage(),
+          EighthPage()
         ],
       ),
       floatingActionButton: Row(
