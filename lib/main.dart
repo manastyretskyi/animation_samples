@@ -2,6 +2,7 @@ import 'package:animation_samples/eighth_page.dart';
 import 'package:animation_samples/fifth_page.dart';
 import 'package:animation_samples/first_page.dart';
 import 'package:animation_samples/fourth_page.dart';
+import 'package:animation_samples/page_10.dart';
 import 'package:animation_samples/page_9.dart';
 import 'package:animation_samples/second_page.dart';
 import 'package:animation_samples/seventh_page.dart';
@@ -9,8 +10,15 @@ import 'package:animation_samples/sixth_page.dart';
 import 'package:animation_samples/third_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+
   runApp(MyApp());
 }
 
@@ -36,7 +44,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final controller = PageController(initialPage: 8);
+  final controller = PageController(initialPage: 9);
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +61,20 @@ class _MyHomePageState extends State<MyHomePage> {
           SeventhPage(),
           EighthPage(),
           Page9(),
+          Page10(
+            child: RotatedBox(
+              quarterTurns: 3,
+              child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 1.0)],
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5.0),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
       floatingActionButton: Row(
